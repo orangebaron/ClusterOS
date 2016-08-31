@@ -10,7 +10,7 @@ buildinstall: k.conf
 bzImage: k.conf
 	cp k.conf linux-stable/.config
 	$(MAKE) -C linux-stable bzImage
-	cp linux-stable/bzImage $(IMG)/boot/bzImage
+	cp linux-stable/arch/x86/boot/bzImage $(IMG)/boot/bzImage
 	rm linux-stable/.config
 
 uImage: k.conf
