@@ -1,7 +1,10 @@
 language: c
+cache: ccache
 compiler:
   - gcc
-script: make test
+script:
+  - CC="ccache gcc"
+  - make test
 notifications:
   email:
     on_success: change
