@@ -1,3 +1,5 @@
+.NOTPARALLEL:
+
 buildinstall: k.conf
 	cp k.conf linux-stable/.config
 	$(MAKE) -C linux-stable modules
