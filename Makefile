@@ -1,4 +1,6 @@
-IMG = $(shell mktemp -d)
+A = $(shell mktemp -d)
+
+IMG = $(A)
 
 .NOTPARALLEL:
 
