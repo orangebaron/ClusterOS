@@ -2,19 +2,22 @@
 
 buildinstall: k.conf
 	@echo $(IMG)
-	cp k.conf linux-stable/.config
 	$(MAKE) -C linux-stable modules
 	$(MAKE) -C linux-stable modules_install INSTALL_MOD_PATH=$(IMG)
 	$(MAKE) -C linux-stable firmware_install INSTALL_FW_PATH=$(IMG)
 	rm linux-stable/.config
 
-bzImage:
+bzImage: k.conf
+	cp k.conf linux-stable/.config
 	$(MAKE) -C linux-stable bzImage
 	cp linux-stable/bzImage $(IMG)/boot/bzImage
+	rm linux-stable/.config
 
-uImage:
+uImage: k.conf
+	cp k.conf linux-stable/.config
 	$(MAKE) -C linux-stable uImage
 	cp linux-stable/uImage $(IMG)/boot/uImage
+	rm linux-stable/.config
 
 k.conf: defconf
 
