@@ -1,9 +1,7 @@
-A = $(shell mktemp -d)
-
-IMG = $(A)
+IMG = /tmp/buildimg
 
 .NOTPARALLEL:
 
 test:
-	mkdir $(IMG)/boot
+	mkdir -p $(IMG)/boot
 	$(MAKE) -C linuxkernel defx86 IMG=$(IMG)
