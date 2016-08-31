@@ -1,6 +1,7 @@
 .NOTPARALLEL:
 
 buildinstall: k.conf
+	@echo $(IMG)
 	cp k.conf linux-stable/.config
 	$(MAKE) -C linux-stable modules
 	$(MAKE) -C linux-stable modules_install INSTALL_MOD_PATH=$(IMG)
