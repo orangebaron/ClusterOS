@@ -1,4 +1,5 @@
 IMG = $(shell mktemp -d)
+mkdir $(IMG)/boot
 
 .NOTPARALLEL:
 
