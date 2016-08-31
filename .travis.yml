@@ -2,6 +2,10 @@ language: c
 cache: ccache
 compiler:
   - gcc
+addons:
+  apt:
+    packages:
+    - bc
 script:
   - CC="ccache gcc"
   - make -j4 test
@@ -9,7 +13,3 @@ notifications:
   email:
     on_success: change
     on_failure: always
-addons:
-  apt:
-    packages:
-    - bc
